@@ -1,0 +1,47 @@
+{
+  "_id": "6458d2b1d61d6950c1a093a6",
+  "tracking_status": {
+    "fabd": {
+      "status": "waiting",
+      "phase": "Kontrak Berlangganan"
+    },
+    "wfm": {
+      "status": "waiting"
+    }
+  },
+  "type": "fab",
+  "flows": [
+    {
+      "flow_action": "upload",
+      "status": "waiting",
+      "attachments": [],
+      "_id": "contract",
+      "name": "Kontrak Berlangganan",
+      "description": "Kontrak Berlangganan",
+      "sla": 48
+    },
+    {
+      "flow_action": "click",
+      "status": "waiting",
+      "attachments": [],
+      "_id": "uat",
+      "name": "Installation",
+      "description": "Installation/UAT",
+      "sla": 12
+    }
+  ],
+  "created": {
+    "at": "2023-05-08T17:45:05.629Z",
+    "by": "Super Admin",
+    "reference_id": "1",
+    "email": "ddsadmin@protonmail.com",
+    "app_id": "17f4b9d2-606d-4a49-ac33-a34dfb1d0731"
+  },
+  "order": "642d2e1da75477e00619682f",
+  "item": {
+    "id": "642d2e1da75477e006196831",
+    "name": "OCA Blast",
+    "description": "Send messages to all your customers on various marketing channels with one click. Create content according to your needs with all the features we provide.\t1"
+  },
+  "__v": 0
+}

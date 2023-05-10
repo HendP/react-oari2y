@@ -1,0 +1,159 @@
+/* Positioning */
+.content {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+/* Title Style */
+.group-title {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.completed-title {
+  color: rgb(33, 150, 83);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.in-progress-title {
+  color: rgb(239, 162, 11);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.terminated-title {
+  color: rgb(191, 41, 50);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+/* Step Base */
+
+.step {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.v-stepper {
+  position: relative;
+}
+
+/* Circle */
+.circle {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 20px; /* +6 for border */
+  height: 20px;
+  display: inline-block;
+}
+
+.circle-title {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 15px; /* +6 for border */
+  height: 16px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+
+.line {
+  top: 23px;
+  left: 11px;
+  height: 100%;
+  position: absolute;
+  border-left: 5px solid gray;
+}
+
+.step.completed .circle,
+.step.completed .circle-title {
+  visibility: visible;
+  background-color: rgb(33, 150, 83);
+  border-color: rgb(33, 150, 83);
+}
+
+.step.completed .line {
+  border-left: 5px solid rgb(33, 150, 83);
+}
+
+.step.in-progress .circle,
+.step.in-progress .circle-title {
+  visibility: visible;
+  background-color: rgb(239, 162, 11);
+  border-color: rgb(239, 162, 11);
+}
+
+.step.in-progress .line {
+  border-left: 5px solid rgb(239, 162, 11);
+}
+
+.step.terminated .circle,
+.step.terminated .circle-title {
+  visibility: visible;
+  background-color: rgb(191, 41, 50);
+  border-color: rgb(191, 41, 50);
+}
+
+.step.terminated .line {
+  border-left: 5px solid rgb(191, 41, 50);
+}
+
+.step.empty-completed .line {
+  border-left: 5px solid rgb(33, 150, 83);
+  top: 0;
+  height: 180%;
+}
+
+.step.empty-in-progress .line {
+  border-left: 5px solid rgb(239, 162, 11);
+  top: 0;
+  height: 180%;
+}
+
+.step.empty-terminated .line {
+  border-left: 5px solid rgb(191, 41, 50);
+  top: 0;
+  height: 180%;
+}
+
+.step.empty-completed .circle,
+.step.empty-in-progress .circle,
+.step.empty-terminated .circle {
+  visibility: hidden;
+}
+
+.step.empty .line {
+  top: 0;
+  height: 150%;
+}
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+}
+
+/* text Stepper*/
+.text-completed {
+  color: rgb(33, 150, 83);
+}
+
+.text-in-progress {
+  color: rgb(239, 162, 11);
+}
+
+.text-terminated {
+  color: rgb(191, 41, 50);
+}
