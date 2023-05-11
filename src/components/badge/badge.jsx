@@ -10,10 +10,10 @@ function Badge(props) {
       badgeColor = 'green';
       break;
     case 'in-progress':
-      badgeColor = 'yellow';
+      badgeColor = 'primary';
       break;
-    case 'terminated':
-      badgeColor = 'stop';
+    case 'waiting':
+      badgeColor = 'primary';
       break;
     default:
       badgeColor = '';
