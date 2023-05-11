@@ -22,7 +22,7 @@ const Stepper = ({
           {titleCompleted ? (
             <div className="circle-title"></div>
           ) : titleInProgress ? (
-            <div className="circle-title"></div>
+            <div className="circle-title in-progress"></div>
           ) : titleTerminated ? (
             <div className="circle-title"></div>
           ) : (
@@ -46,7 +46,7 @@ const Stepper = ({
         ) : titleTerminated ? (
           <div className="inline">
             <div className="content terminated-title">{data}</div>
-            <Badge status="terminated" text="Terminated" />
+            <Badge status="terminated" text="Waited" />
           </div>
         ) : emptyCompleted ? (
           <div className="content text-completed">{data}</div>

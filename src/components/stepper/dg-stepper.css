@@ -16,6 +16,13 @@
   line-height: 29px;
 }
 
+.primary-title {
+  color: rgb(137, 64, 151);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
 .completed-title {
   color: rgb(33, 150, 83);
   font-size: 16px;
@@ -87,6 +94,17 @@
 
 .step.completed .line {
   border-left: 5px solid rgb(33, 150, 83);
+}
+
+.step.primary .circle,
+.step.primary .circle-title {
+  visibility: visible;
+  background-color: rgb(137, 64, 151);
+  border-color: rgb(137, 64, 151);
+}
+
+.step.primary .line {
+  border-left: 5px solid rgb(137, 64, 151);
 }
 
 .step.in-progress .circle,
