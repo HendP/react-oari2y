@@ -80,6 +80,7 @@ export default function TemplateSatu() {
         titleCompleted
         badge
         child
+        lastLine
       />
 
       <Stepper

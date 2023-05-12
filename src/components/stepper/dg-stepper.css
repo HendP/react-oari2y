@@ -140,7 +140,6 @@
   left: 52px;
   height: 90px;
   position: absolute;
-  border-left: 5px solid gray;
 }
 
 .step.completed .circle,
@@ -149,6 +148,20 @@
   visibility: visible;
   background-color: rgb(33, 150, 83);
   border-color: rgb(33, 150, 83);
+}
+
+.step.completed.child,
+.step.waiting.child,
+.step.in-progress.child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.step.empty-completed.child,
+.step.empty-waiting.child,
+.step.empty-in-progress.child {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .step.completed .line {
@@ -237,6 +250,7 @@
   font-size: 12px;
   font-weight: 400;
   padding-left: 40px;
+  margin-bottom: 5px;
 }
 
 .text-in-progress {
@@ -244,6 +258,7 @@
   font-style: italic;
   font-size: 12px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .text-waiting {
@@ -251,4 +266,5 @@
   font-style: italic;
   font-size: 12px;
   font-weight: 400;
+  margin-bottom: 5px;
 }

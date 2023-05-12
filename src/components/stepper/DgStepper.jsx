@@ -15,6 +15,7 @@ const Stepper = ({
   emptyInProgress,
   emptyWaiting,
   child,
+  lastLine,
   sla,
   time,
   duration,
@@ -30,7 +31,11 @@ const Stepper = ({
               <div
                 className={`circle-title ${child ? 'circle-title-child' : ''}`}
               ></div>
-              <div className={`line ${child ? 'line-child' : ''}`}></div>
+              {lastLine ? (
+                <div className={`line`}></div>
+              ) : (
+                <div className={`line ${child ? 'line-child' : ''}`}></div>
+              )}
             </>
           ) : (
             <>
