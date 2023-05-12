@@ -9,9 +9,9 @@ export default function TemplateSatu() {
       <Stepper status="completed" title="Order Created" titleCompleted />
       <Stepper
         status="empty-completed"
+        createdBy="[Name]"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
-        createdBy="[Name]"
         emptyCompleted
       />
 

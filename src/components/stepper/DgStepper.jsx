@@ -3,7 +3,7 @@ import "./dg-stepper.css";
 
 import Badge from "../badge/badge";
 
-const Stepper = ({
+function Stepper({
   status,
   title,
   groupTitle,
@@ -21,7 +21,7 @@ const Stepper = ({
   time,
   duration,
   createdBy,
-}) => {
+}) {
   return (
     <>
       <div className={`step ${status} ${child ? "child" : ""}`}>
@@ -98,6 +98,12 @@ const Stepper = ({
                   <br />
                 </span>
               )}
+              {createdBy && (
+                <span>
+                  by {createdBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
@@ -107,12 +113,6 @@ const Stepper = ({
               {duration && (
                 <span>
                   Duration: {duration}
-                  <br />
-                </span>
-              )}
-              {createdBy && (
-                <span>
-                  Created By {createdBy}
                   <br />
                 </span>
               )}
@@ -127,6 +127,12 @@ const Stepper = ({
                   <br />
                 </span>
               )}
+              {createdBy && (
+                <span>
+                  by {createdBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
@@ -136,12 +142,6 @@ const Stepper = ({
               {duration && (
                 <span>
                   Duration: {duration}
-                  <br />
-                </span>
-              )}
-              {createdBy && (
-                <span>
-                  Created By {createdBy}
                   <br />
                 </span>
               )}
@@ -156,6 +156,12 @@ const Stepper = ({
                   <br />
                 </span>
               )}
+              {createdBy && (
+                <span>
+                  by {createdBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
@@ -168,12 +174,6 @@ const Stepper = ({
                   <br />
                 </span>
               )}
-              {createdBy && (
-                <span>
-                  Created By {createdBy}
-                  <br />
-                </span>
-              )}
             </p>
           </div>
         ) : (
@@ -182,6 +182,6 @@ const Stepper = ({
       </div>
     </>
   );
-};
+}
 
 export default Stepper;

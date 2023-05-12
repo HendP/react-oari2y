@@ -88,7 +88,7 @@
 /* Step Base */
 
 .step {
-  padding: 6px;
+  /* padding: 6px; */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -103,8 +103,10 @@
   background-color: white;
   border: 3px solid gray;
   border-radius: 100%;
-  width: 20px; /* +6 for border */
-  height: 20px;
+  width: 14px; /* +6 for border */
+  height: 14px;
+  margin-left: 2.5px;
+  margin-top: 4px;
   display: inline-block;
 }
 
@@ -112,33 +114,33 @@
   background-color: white;
   border: 3px solid gray;
   border-radius: 100%;
-  width: 14px; /* +6 for border */
-  height: 14px;
-  margin-left: 3px;
-  margin-top: 4px;
+  width: 10px; /* +6 for border */
+  height: 10px;
+  margin-left: 5px;
+  margin-top: 7px;
 }
 
 .circle-title-child {
   background-color: white;
   border: 3px solid gray;
   border-radius: 100%;
-  width: 14px; /* +6 for border */
-  height: 14px;
-  margin-left: 45px;
-  margin-top: 4px;
+  width: 10px; /* +6 for border */
+  height: 10px;
+  margin-left: 46px;
+  margin-top: 8px;
 }
 
 .line {
   top: 8px;
   left: 11px;
-  height: 42px;
+  height: 29px;
   position: absolute;
 }
 
 .line-child {
   top: 24px;
   left: 52px;
-  height: 90px;
+  height: 95px;
   position: absolute;
 }
 
@@ -160,6 +162,13 @@
 .step.empty-completed.child,
 .step.empty-waiting.child,
 .step.empty-in-progress.child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.step.empty-completed,
+.step.empty-in-progress,
+.step.empty-waiting {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -196,28 +205,25 @@
 .step.empty-completed .line,
 .step.empty-completed .line-child {
   border-left: 5px solid rgb(33, 150, 83);
-  height: 180%;
+  height: 120%;
 }
 
 .step.empty-in-progress .line,
 .step.empty-in-progress .line-child {
   border-left: 5px solid rgb(137, 64, 151);
-  top: 0;
-  height: 180%;
+  height: 120%;
 }
 
 .step.empty-waiting .line,
 .step.empty-waiting .line-child {
   border-left: 5px solid rgb(137, 64, 151);
-  top: 0;
-  height: 180%;
+  height: 120%;
 }
 
 .step.waiting .line,
 .step.waiting .line-child {
   border-left: 5px solid rgb(137, 64, 151);
-  top: 0;
-  height: 180%;
+  height: 120%;
 }
 
 .step.empty-completed .circle,
