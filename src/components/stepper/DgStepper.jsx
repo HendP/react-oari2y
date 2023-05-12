@@ -19,8 +19,10 @@ function Stepper({
   lastLine,
   sla,
   time,
+  dueDate,
   duration,
   createdBy,
+  uploadedBy,
 }) {
   return (
     <>
@@ -104,9 +106,21 @@ function Stepper({
                   <br />
                 </span>
               )}
+              {uploadedBy && (
+                <span>
+                  Upload by {uploadedBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
+                  <br />
+                </span>
+              )}
+              {dueDate && (
+                <span>
+                  Due Date {dueDate}
                   <br />
                 </span>
               )}
@@ -133,9 +147,21 @@ function Stepper({
                   <br />
                 </span>
               )}
+              {uploadedBy && (
+                <span>
+                  Upload by {uploadedBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
+                  <br />
+                </span>
+              )}
+              {dueDate && (
+                <span>
+                  Due Date {dueDate}
                   <br />
                 </span>
               )}
@@ -162,9 +188,21 @@ function Stepper({
                   <br />
                 </span>
               )}
+              {uploadedBy && (
+                <span>
+                  Upload by {uploadedBy}
+                  <br />
+                </span>
+              )}
               {time && (
                 <span>
                   on {time}
+                  <br />
+                </span>
+              )}
+              {dueDate && (
+                <span>
+                  Due Date {dueDate}
                   <br />
                 </span>
               )}

@@ -21,8 +21,8 @@ export default function TemplateSatu() {
       <Stepper status="completed" title="Review Order" titleCompleted badge />
       <Stepper
         status="empty-completed"
-        sla="1 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
+        dueDate="12 April 2023 (12.09 WIB)"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         createdBy="[Name]"
         emptyCompleted
@@ -39,8 +39,8 @@ export default function TemplateSatu() {
       />
       <Stepper
         status="empty-completed"
-        sla="1 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
+        dueDate="13 April 2023 (12.09 WIB)"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         createdBy="[Name]"
         emptyCompleted
@@ -66,9 +66,9 @@ export default function TemplateSatu() {
 
       <Stepper
         status="empty-completed"
-        sla="5 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
+        dueDate="13 April 2023 (12.09 WIB)"
         createdBy="[Name]"
         emptyCompleted
         child
@@ -85,8 +85,8 @@ export default function TemplateSatu() {
 
       <Stepper
         status="empty-completed"
-        sla="5 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
+        dueDate="13 April 2023 (12.09 WIB)"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         createdBy="[Name]"
         emptyCompleted
@@ -94,22 +94,33 @@ export default function TemplateSatu() {
       />
 
       {/* 4 */}
-
-      <Stepper status="completed" title="Upload Berita Acara" groupTitle />
       <Stepper
         status="completed"
-        title="Upload Berita Acara"
+        title="Inform to Customer via email"
         titleCompleted
         badge
-        lastLine
       />
 
       <Stepper
         status="empty-completed"
-        sla="5 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
+        dueDate="14 April 2023 (12.09 WIB)"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         createdBy="[Name]"
+        emptyCompleted
+      />
+
+      {/* 5 */}
+
+      <Stepper status="completed" title="Upload Berita Acara" groupTitle />
+      <Stepper status="completed" title="BAST" titleCompleted badge lastLine />
+
+      <Stepper
+        status="empty-completed"
+        uploadedBy="Lina Winata Wijaya"
+        time="[dd-mm-yyyy] - [hh:mm:ss]"
+        dueDate="16 April 2023 (12.09 WIB)"
+        duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         emptyCompleted
       />
     </div>

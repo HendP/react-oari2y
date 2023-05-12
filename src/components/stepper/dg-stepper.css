@@ -1,9 +1,5 @@
 /* Positioning */
-.content {
-  margin-left: 10px;
-  display: inline-block;
-}
-
+.content,
 .content-child {
   margin-left: 10px;
   display: inline-block;
