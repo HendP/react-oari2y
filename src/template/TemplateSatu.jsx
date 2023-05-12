@@ -1,5 +1,5 @@
-import React from 'react';
-import Stepper from '../components/stepper/DgStepper';
+import React from "react";
+import Stepper from "../components/stepper/DgStepper";
 
 export default function TemplateSatu() {
   return (
@@ -80,7 +80,7 @@ export default function TemplateSatu() {
         titleCompleted
         badge
         child
-        lastLine
+        lastChild
       />
 
       <Stepper
@@ -95,31 +95,23 @@ export default function TemplateSatu() {
 
       {/* 4 */}
 
-      <Stepper status="waiting" title="Upload Berita Acara" groupTitle />
-      <Stepper status="waiting" title="Upload Berita Acara" titleWaiting />
+      <Stepper status="completed" title="Upload Berita Acara" groupTitle />
+      <Stepper
+        status="completed"
+        title="Upload Berita Acara"
+        titleCompleted
+        badge
+        lastLine
+      />
 
-      {/* <Stepper
+      <Stepper
         status="empty-completed"
         sla="5 days"
         time="[dd-mm-yyyy] - [hh:mm:ss]"
         duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
         createdBy="[Name]"
         emptyCompleted
-      /> */}
-
-      {/* 5 */}
-
-      <Stepper status="waiting" title="Activate Service" groupTitle />
-      <Stepper status="waiting" title="Activate Service" titleWaiting />
-
-      {/* <Stepper
-        status="empty-completed"
-        sla="5 days"
-        time="[dd-mm-yyyy] - [hh:mm:ss]"
-        duration="[n] [Second(s)/Minute(s)/Hour(s)/Day(s)"
-        createdBy="[Name]"
-        emptyCompleted
-      /> */}
+      />
     </div>
   );
 }

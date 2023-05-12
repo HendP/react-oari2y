@@ -1,7 +1,7 @@
-import React from 'react';
-import './dg-stepper.css';
+import React from "react";
+import "./dg-stepper.css";
 
-import Badge from '../badge/badge';
+import Badge from "../badge/badge";
 
 const Stepper = ({
   status,
@@ -15,6 +15,7 @@ const Stepper = ({
   emptyInProgress,
   emptyWaiting,
   child,
+  lastChild,
   lastLine,
   sla,
   time,
@@ -23,23 +24,28 @@ const Stepper = ({
 }) => {
   return (
     <>
-      <div className={`step ${status} ${child ? 'child' : ''}`}>
+      <div className={`step ${status} ${child ? "child" : ""}`}>
         <div className="v-stepper">
           {titleCompleted || titleInProgress || titleWaiting ? (
             <>
-              <div className={`line`}></div>
+              <div className={`${lastLine ? "" : "line"}`}></div>
               <div
-                className={`circle-title ${child ? 'circle-title-child' : ''}`}
+                className={`circle-title ${child ? "circle-title-child" : ""}`}
               ></div>
-              {lastLine ? (
-                <div className={`line`}></div>
+              {lastChild ? (
+                <div className={`${lastLine ? "" : "line"} : ""}`}></div>
               ) : (
-                <div className={`line ${child ? 'line-child' : ''}`}></div>
+                <div
+                  className={`${lastLine ? "" : "line"} ${
+                    child ? "line-child" : ""
+                  }`}
+                ></div>
               )}
             </>
           ) : (
             <>
-              <div className="circle"></div> <div className="line"></div>
+              <div className="circle"></div>{" "}
+              <div className={`line ${lastLine ? "hide" : ""}`}></div>
             </>
           )}
         </div>
@@ -52,7 +58,7 @@ const Stepper = ({
           <div className="inline">
             <div
               className={`${
-                child ? 'content-child' : 'content'
+                child ? "content-child" : "content"
               } completed-title`}
             >
               {title}
@@ -63,7 +69,7 @@ const Stepper = ({
           <div className="inline">
             <div
               className={`${
-                child ? 'content-child' : 'content'
+                child ? "content-child" : "content"
               }  in-progress-title`}
             >
               {title}
@@ -73,7 +79,7 @@ const Stepper = ({
         ) : titleWaiting ? (
           <div className="inline">
             <div
-              className={`${child ? 'content-child' : 'content'} waiting-title`}
+              className={`${child ? "content-child" : "content"} waiting-title`}
             >
               {title}
             </div>
@@ -82,10 +88,10 @@ const Stepper = ({
         ) : emptyCompleted ? (
           <div
             className={`content ${
-              child ? 'text-complete-child' : 'text-completed'
+              child ? "text-complete-child" : "text-completed"
             }`}
           >
-            <p style={{ lineHeight: '1.5', margin: '0' }}>
+            <p style={{ lineHeight: "1.5", margin: "0" }}>
               {sla && (
                 <span>
                   SLA: {sla}
@@ -114,7 +120,7 @@ const Stepper = ({
           </div>
         ) : emptyInProgress ? (
           <div className="content text-in-progress">
-            <p style={{ lineHeight: '1.5', margin: '0' }}>
+            <p style={{ lineHeight: "1.5", margin: "0" }}>
               {sla && (
                 <span>
                   SLA: {sla}
@@ -143,7 +149,7 @@ const Stepper = ({
           </div>
         ) : emptyWaiting ? (
           <div className="content text-waiting">
-            <p style={{ lineHeight: '1.5', margin: '0' }}>
+            <p style={{ lineHeight: "1.5", margin: "0" }}>
               {sla && (
                 <span>
                   SLA: {sla}
