@@ -1,47 +1,142 @@
 {
-  "_id": "6458d2b1d61d6950c1a093a6",
-  "tracking_status": {
-    "fabd": {
-      "status": "waiting",
-      "phase": "Kontrak Berlangganan"
-    },
-    "wfm": {
-      "status": "waiting"
-    }
-  },
   "type": "fab",
-  "flows": [
+  "current_activation_tracking": {
+    "type": "task",
+    "key": "shipment_and_delivery_shipment_and_delivery",
+    "name": "Shipment and Delivery"
+  },
+  "activation_trackings": [
     {
-      "flow_action": "upload",
-      "status": "waiting",
-      "attachments": [],
-      "_id": "contract",
-      "name": "Kontrak Berlangganan",
-      "description": "Kontrak Berlangganan",
-      "sla": 48
+      "name": "Order Created",
+      "key": "order_created",
+      "action": ["click"],
+      "status": "completed",
+      "start_date": "2023-05-09T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-09T20:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-09T22:11:17.658Z",
+      "duration": {
+        "text": "1 Hour(s)",
+        "value": 1,
+        "metric": {
+          "label": "Hour(s)",
+          "value": "hours"
+        },
+        "sla": 3,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
     },
     {
-      "flow_action": "click",
+      "name": "Review Order",
+      "key": "review_order_review_order",
+      "action": ["click"],
+      "status": "completed",
+      "start_date": "2023-05-09T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-09T20:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-09T22:11:17.658Z",
+      "duration": {
+        "text": "1 Hour(s)",
+        "value": 1,
+        "metric": {
+          "label": "Hour(s)",
+          "value": "hours"
+        },
+        "sla": 3,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Shipment and Delivery",
+      "key": "shipment_and_delivery_shipment_and_delivery",
+      "action": ["click", "input"],
+      "action_detail": {
+        "input": "Sudah di deliver dengan alamat IP: XXX.XXX.XXX.XXX"
+      },
+      "status": "in_progress",
+      "start_date": "2023-05-11T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-13T19:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-12T19:11:17.658Z",
+      "duration": {
+        "text": "2 Day(s)",
+        "value": 2,
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 1,
+        "status": "danger",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Inform to Customer via Email",
+      "key": "inform_to_customer_via_email",
+      "action": ["click"],
       "status": "waiting",
-      "attachments": [],
-      "_id": "uat",
-      "name": "Installation",
-      "description": "Installation/UAT",
-      "sla": 12
+      "start_date": "2023-05-17T11:16:17.658Z",
+      "updated": {
+        "at": "2023-05-17T13:41:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-19T11:16:17.658Z",
+      "duration": {
+        "text": "1 Day(s)",
+        "value": 1,
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 2,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "BAST",
+      "key": "upload_berita_acara_bast",
+      "action": ["click", "upload"],
+      "status": "waiting",
+      "start_date": null,
+      "end_date": null,
+      "duration": {
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 3,
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Product Activated",
+      "key": "approval_project_management_product_activated",
+      "action": ["click"],
+      "status": "waiting",
+      "start_date": null,
+      "end_date": null,
+      "duration": {
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 1,
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
     }
   ],
+  "status": "waiting",
   "created": {
-    "at": "2023-05-08T17:45:05.629Z",
-    "by": "Super Admin",
-    "reference_id": "1",
-    "email": "ddsadmin@protonmail.com",
-    "app_id": "17f4b9d2-606d-4a49-ac33-a34dfb1d0731"
-  },
-  "order": "642d2e1da75477e00619682f",
-  "item": {
-    "id": "642d2e1da75477e006196831",
-    "name": "OCA Blast",
-    "description": "Send messages to all your customers on various marketing channels with one click. Create content according to your needs with all the features we provide.\t1"
-  },
-  "__v": 0
+    "at": "2023-05-09T18:11:17.658Z",
+    "by": "Dadang Corneto"
+  }
 }

@@ -1,6 +1,7 @@
 /* Positioning */
-.content {
-  margin-left: 20px;
+.content,
+.content-child {
+  margin-left: 10px;
   display: inline-block;
 }
 
@@ -16,6 +17,13 @@
   line-height: 29px;
 }
 
+.primary-title {
+  color: rgb(137, 64, 151);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
 .completed-title {
   color: rgb(33, 150, 83);
   font-size: 16px;
@@ -24,15 +32,51 @@
 }
 
 .in-progress-title {
-  color: rgb(239, 162, 11);
+  color: rgb(137, 64, 151);
   font-size: 16px;
   font-weight: 700;
   line-height: 29px;
 }
 
-.terminated-title {
-  color: rgb(191, 41, 50);
+.waiting-title {
+  color: rgb(137, 64, 151);
   font-size: 16px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+/* Title Style Child */
+.group-title.child {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.primary-title.child {
+  color: rgb(137, 64, 151);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.completed-title.child {
+  color: rgb(33, 150, 83);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.in-progress-title.child {
+  color: rgb(137, 64, 151);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.waiting-title {
+  color: rgb(137, 64, 151);
+  font-size: 14px;
   font-weight: 700;
   line-height: 29px;
 }
@@ -40,7 +84,7 @@
 /* Step Base */
 
 .step {
-  padding: 10px;
+  /* padding: 6px; */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -50,13 +94,15 @@
   position: relative;
 }
 
-/* Circle */
+/* Circle & Line */
 .circle {
   background-color: white;
   border: 3px solid gray;
   border-radius: 100%;
-  width: 20px; /* +6 for border */
-  height: 20px;
+  width: 14px; /* +6 for border */
+  height: 14px;
+  margin-left: 2.5px;
+  margin-top: 4px;
   display: inline-block;
 }
 
@@ -64,25 +110,63 @@
   background-color: white;
   border: 3px solid gray;
   border-radius: 100%;
-  width: 15px; /* +6 for border */
-  height: 16px;
-  margin-left: 3px;
-  margin-top: 2px;
+  width: 10px; /* +6 for border */
+  height: 10px;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+
+.circle-title-child {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 10px; /* +6 for border */
+  height: 10px;
+  margin-left: 46px;
+  margin-top: 8px;
 }
 
 .line {
-  top: 23px;
+  top: 8px;
   left: 11px;
-  height: 100%;
+  height: 29px;
   position: absolute;
-  border-left: 5px solid gray;
+}
+
+.line-child {
+  top: 22px;
+  left: 52px;
+  height: 95px;
+  position: absolute;
 }
 
 .step.completed .circle,
-.step.completed .circle-title {
+.step.completed .circle-title,
+.step.completed .circle-title-child {
   visibility: visible;
   background-color: rgb(33, 150, 83);
   border-color: rgb(33, 150, 83);
+}
+
+.step.completed.child,
+.step.waiting.child,
+.step.in-progress.child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.step.empty-completed.child,
+.step.empty-waiting.child,
+.step.empty-in-progress.child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.step.empty-completed,
+.step.empty-in-progress,
+.step.empty-waiting {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .step.completed .line {
@@ -90,48 +174,58 @@
 }
 
 .step.in-progress .circle,
-.step.in-progress .circle-title {
+.step.in-progress .circle-title,
+.step.in-progress .circle-title-child {
   visibility: visible;
-  background-color: rgb(239, 162, 11);
-  border-color: rgb(239, 162, 11);
+  background-color: rgb(137, 64, 151);
+  border-color: rgb(137, 64, 151);
 }
 
 .step.in-progress .line {
-  border-left: 5px solid rgb(239, 162, 11);
+  border-left: 5px solid rgb(137, 64, 151);
 }
 
-.step.terminated .circle,
-.step.terminated .circle-title {
+.step.waiting .circle,
+.step.waiting .circle-title,
+.step.waiting .circle-title-child {
   visibility: visible;
-  background-color: rgb(191, 41, 50);
-  border-color: rgb(191, 41, 50);
+  background-color: rgb(137, 64, 151);
+  border-color: rgb(137, 64, 151);
 }
 
-.step.terminated .line {
-  border-left: 5px solid rgb(191, 41, 50);
+.step.waiting .line,
+.step.waiting .line-child {
+  border-left: 5px solid rgb(137, 64, 151);
+  height: 120%;
 }
 
-.step.empty-completed .line {
+.step.empty-completed .line,
+.step.empty-completed .line-child {
   border-left: 5px solid rgb(33, 150, 83);
-  top: 0;
-  height: 180%;
+  height: 120%;
 }
 
-.step.empty-in-progress .line {
-  border-left: 5px solid rgb(239, 162, 11);
-  top: 0;
-  height: 180%;
+.step.empty-in-progress .line,
+.step.empty-in-progress .line-child {
+  border-left: 5px solid rgb(137, 64, 151);
+  height: 120%;
 }
 
-.step.empty-terminated .line {
-  border-left: 5px solid rgb(191, 41, 50);
-  top: 0;
-  height: 180%;
+.step.empty-waiting .line,
+.step.empty-waiting .line-child {
+  border-left: 5px solid rgb(137, 64, 151);
+  height: 120%;
+}
+
+.step.waiting .line,
+.step.waiting .line-child {
+  border-left: 5px solid rgb(137, 64, 151);
+  height: 100%;
 }
 
 .step.empty-completed .circle,
 .step.empty-in-progress .circle,
-.step.empty-terminated .circle {
+.step.empty-waiting .circle {
   visibility: hidden;
 }
 
@@ -148,12 +242,50 @@
 /* text Stepper*/
 .text-completed {
   color: rgb(33, 150, 83);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.text-complete-child {
+  color: rgb(33, 150, 83);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 40px;
+  margin-bottom: 5px;
 }
 
 .text-in-progress {
-  color: rgb(239, 162, 11);
+  color: rgb(137, 64, 151);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
-.text-terminated {
-  color: rgb(191, 41, 50);
+.text-in-progress-child {
+  color: rgb(137, 64, 151);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 40px;
+  margin-bottom: 5px;
+}
+
+.text-waiting {
+  color: rgb(137, 64, 151);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.text-waiting-child {
+  color: rgb(137, 64, 151);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 40px;
+  margin-bottom: 5px;
 }
