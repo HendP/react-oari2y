@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 
 import Stepper from "../components/stepper/DgStepper";
 import jsonData from "../data.json";
@@ -8,9 +8,31 @@ export default function TemplateSatu() {
   const [activationTrackings, setActivationTrackings] = useState(
     jsonData.activation_trackings
   );
+  const [currentActivationTracking, setCurrentActivationTracking] = useState(
+    jsonData.current_activation_tracking
+  );
+  const [index, setIndex] = useState({
+    numIndex: 0,
+    statusIndex: "",
+  });
+
+  // Helper Function
+  const checkCurrentActivation = (data) => {
+    data.map((element, index) => {
+      if (element.key === currentActivationTracking.key) {
+        setIndex({ numIndex: index, statusIndex: element?.status });
+      }
+    })
+  }
+  const changeCurrentActivation = () => {
+    if(index.statusIndex === "waiting"){
+
+    }
+  };
 
   const ActivationTrackingComponent = () => {
     let steps = activationTrackings;
+    checkCurrentActivation(steps);
     return (
       <>
         {steps.map((element, index) => {
@@ -120,7 +142,6 @@ export default function TemplateSatu() {
                           status="in-progress"
                           title={element?.name}
                           titleInProgress
-                          badge
                           lastLine
                         />
                       </>
@@ -129,7 +150,6 @@ export default function TemplateSatu() {
                         status="in-progress"
                         title={element?.name}
                         titleInProgress
-                        badge
                       />
                     )}
                     {element?.sub_tasks ? (
@@ -145,7 +165,6 @@ export default function TemplateSatu() {
                                         status="in-progress"
                                         title={subElement?.name}
                                         titleInProgress
-                                        badge
                                         child
                                         lastChild
                                       />
@@ -154,7 +173,6 @@ export default function TemplateSatu() {
                                         status="in-progress"
                                         title={subElement?.name}
                                         titleInProgress
-                                        badge
                                         child
                                       />
                                     )}
@@ -188,9 +206,28 @@ export default function TemplateSatu() {
                           }
                         })}
                       </>
-                    ) : (
-                      ""
-                    )}
+                    ) : currentActivationTracking.key === element.key &&
+                      element?.status === "in_progress" ? (
+                      <>
+                        <Stepper
+                          status="empty-in-progress"
+                          createdBy={element?.updated?.by}
+                          time={
+                            element?.updated?.at
+                              ? formatDateTime(element?.updated?.at)
+                              : ""
+                          }
+                          dueDate={
+                            element?.end_date
+                              ? formatLocalDateTime(element?.duration.due_date)
+                              : ""
+                          }
+                          duration={element?.duration?.text}
+                          emptyInProgress
+                        />
+                        <Stepper status="empty-in-progress" buttonDone />
+                      </>
+                    ) : null}
                   </>
                 ) : (
                   <>
@@ -200,7 +237,6 @@ export default function TemplateSatu() {
                           status="waiting"
                           title={element?.name}
                           titleWaiting
-                          badge
                           lastLine
                         />
                       </>
@@ -209,7 +245,6 @@ export default function TemplateSatu() {
                         status="waiting"
                         title={element?.name}
                         titleWaiting
-                        badge
                       />
                     )}
                     {element?.sub_tasks ? (
@@ -225,7 +260,6 @@ export default function TemplateSatu() {
                                         status="waiting"
                                         title={subElement?.name}
                                         titleWaiting
-                                        badge
                                         child
                                         lastChild
                                       />
@@ -234,11 +268,10 @@ export default function TemplateSatu() {
                                         status="waiting"
                                         title={subElement?.name}
                                         titleWaiting
-                                        badge
                                         child
                                       />
                                     )}
-                                    <Stepper
+                                    {/* <Stepper
                                       status="empty-waiting"
                                       createdBy={subElement?.updated?.by}
                                       time={
@@ -258,7 +291,7 @@ export default function TemplateSatu() {
                                       duration={subElement?.duration?.text}
                                       emptyWaiting
                                       child
-                                    />
+                                    /> */}
                                   </>
                                 ) : (
                                   ""
@@ -268,9 +301,10 @@ export default function TemplateSatu() {
                           }
                         })}
                       </>
-                    ) : (
-                      ""
-                    )}
+                    ) : currentActivationTracking.key === element.key &&
+                      element.status === "waiting" ? (
+                      <Stepper status="empty-waiting" buttonStart />
+                    ) : null}
                   </>
                 )}
               </Fragment>
@@ -280,6 +314,7 @@ export default function TemplateSatu() {
       </>
     );
   };
+  
   return (
     <>
       <ActivationTrackingComponent />

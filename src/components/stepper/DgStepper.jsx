@@ -23,6 +23,8 @@ function Stepper({
   duration = null,
   createdBy = null,
   uploadedBy = null,
+  buttonStart = false,
+  buttonDone = false,
 }) {
   return (
     <>
@@ -46,7 +48,7 @@ function Stepper({
             </>
           ) : (
             <>
-              <div className="circle"></div>{" "}
+              <div className="circle"></div>
               <div className={`line ${lastLine ? "hide" : ""}`}></div>
             </>
           )}
@@ -133,7 +135,11 @@ function Stepper({
             </p>
           </div>
         ) : emptyInProgress ? (
-          <div className="content text-in-progress">
+          <div
+            className={`content ${
+              child ? "text-in-progress-child" : "text-in-progress"
+            }`}
+          >
             <p style={{ lineHeight: "1.5", margin: "0" }}>
               {sla && (
                 <span>
@@ -174,7 +180,11 @@ function Stepper({
             </p>
           </div>
         ) : emptyWaiting ? (
-          <div className="content text-waiting">
+          <div
+            className={`content  ${
+              child ? "text-waiting-child" : "text-waiting"
+            }`}
+          >
             <p style={{ lineHeight: "1.5", margin: "0" }}>
               {sla && (
                 <span>
@@ -217,6 +227,20 @@ function Stepper({
         ) : (
           <div className="content">{title}</div>
         )}
+
+        {buttonStart ? (
+          <div className="text-waiting">
+            <p style={{ marginTop: "0" }}>Ready to Start, please Click</p>
+            <button>Start</button>
+          </div>
+        ) : buttonDone ? (
+          <div className="text-in-progress">
+            <p style={{ marginTop: "0" }}>
+              Need your update. Have you done It? Please click done{" "}
+            </p>
+            <button>Done</button>
+          </div>
+        ) : null}
       </div>
     </>
   );

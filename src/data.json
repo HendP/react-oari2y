@@ -1,236 +1,142 @@
 {
-	"type": "fab",
-	"current_activation_tracking": {
-		"type": "task",
-		"key": "upload_berita_acara_bast",
-		"name": "BAST"
-	},
-	"activation_trackings": [
-		{
-			"name": "Review Order",
-			"key": "review_order_review_order",
-			"action": [
-				"click"
-			],
-			"status": "completed",
-			"start_date": "2023-05-09T19:11:17.658Z",
-			"updated": {
-				"at": "2023-05-09T20:11:17.658Z",
-				"by": "Ferdhika"
-			},
-			"end_date": "2023-05-09T22:11:17.658Z",
-			"duration": {
-				"text": "1 Hour(s)",
-				"value": 1,
-				"metric": {
-					"label": "Hour(s)",
-					"value": "hours"
-				},
-				"sla": 3,
-				"status": "success"
-			}
-		},
-		{
-			"name": "Shipment and Delivery",
-			"key": "shipment_and_delivery_shipment_and_delivery",
-			"action": [
-				"click",
-				"input"
-			],
-			"action_detail": {
-				"input": "Sudah di deliver dengan alamat IP: XXX.XXX.XXX.XXX"
-			},
-			"status": "completed",
-			"start_date": "2023-05-11T19:11:17.658Z",
-			"updated": {
-				"at": "2023-05-13T19:11:17.658Z",
-				"by": "Ferdhika"
-			},
-			"end_date": "2023-05-12T19:11:17.658Z",
-			"duration": {
-				"text": "2 Day(s)",
-				"value": 2,
-				"metric": {
-					"label": "Day(s)",
-					"value": "days"
-				},
-				"sla": 1,
-				"status": "danger"
-			}
-		},
-		{
-			"name": "Create User Account",
-			"key": "activate_service_create_user_account",
-			"status": "completed",
-			"sub_tasks": [
-				{
-					"name": "Create Account ID",
-					"key": "activate_service_create_user_account_create_account_id",
-					"action": [
-						"click",
-						"input"
-					],
-					"action_detail": {
-						"input": "Account ID berhasil dibuat dengan ID: XXXXXX"
-					},
-					"status": "completed",
-					"start_date": "2023-05-12T20:11:17.658Z",
-					"updated": {
-						"at": "2023-05-13T19:11:17.658Z",
-						"by": "Ferdhika"
-					},
-					"end_date": "2023-05-14T20:11:17.658Z",
-					"duration": {
-						"text": "1 Day(s)",
-						"value": 1,
-						"metric": {
-							"label": "Day(s)",
-							"value": "days"
-						},
-						"sla": 2,
-						"status": "success"
-					}
-				},
-				{
-					"name": "Create Account Credentials",
-					"key": "activate_service_create_user_account_create_account_credentials",
-					"action": [
-						"click",
-						"input"
-					],
-					"action_detail": {
-						"input": "Account Credentials berhasil dibuat dengan Secret Key: XXXXXX"
-					},
-					"status": "completed",
-					"start_date": "2023-05-14T21:11:17.658Z",
-					"updated": {
-						"at": "2023-05-15T21:11:17.658Z",
-						"by": "Ferdhika"
-					},
-					"end_date": "2023-05-16T21:11:17.658Z",
-					"duration": {
-						"text": "1 Day(s)",
-						"value": 1,
-						"metric": {
-							"label": "Day(s)",
-							"value": "days"
-						},
-						"sla": 2,
-						"status": "success"
-					}
-				},
-				{
-					"name": "Upload Photo Account",
-					"key": "activate_service_create_user_account_upload_photo_account",
-					"action": [
-						"click",
-						"upload"
-					],
-					"action_detail": {
-						"attachments": [
-							{
-								"attachmentType": "bast",
-								"_id": "645b3b570227c7b1e719bf9d",
-								"url": "https://telkompartner-storage-dev.vsan-apps.playcourt.id/product-catalog-service-development/delivery-tracking-attachments/645a3865787fb81743f14aba/20230510133606.wsd",
-								"filename": "20230510133606.wsd",
-								"ori_filename": "test.wsd",
-								"filetype": "wsd",
-								"size": 30
-							},
-							{
-								"attachmentType": "other",
-								"_id": "645b3b570227c7b1e719bf9e",
-								"url": "https://telkompartner-storage-dev.vsan-apps.playcourt.id/product-catalog-service-development/delivery-tracking-attachments/645a3865787fb81743f14aba/20230510133606.png",
-								"filename": "20230510133606.png",
-								"ori_filename": "digimon.png",
-								"filetype": "png",
-								"size": 3926
-							}
-						]
-					},
-					"status": "completed",
-					"start_date": "2023-05-17T10:11:17.658Z",
-					"updated": {
-						"at": "2023-05-17T10:16:17.658Z",
-						"by": "Ferdhika"
-					},
-					"end_date": "2023-05-17T12:11:17.658Z",
-					"duration": {
-						"text": "5 Minute(s)",
-						"value": 5,
-						"metric": {
-							"label": "Minute(s)",
-							"value": "minutes"
-						},
-						"sla": 120,
-						"status": "success"
-					}
-				}
-			]
-		},
-		{
-			"name": "Inform to Customer via Email",
-			"key": "inform_to_customer_via_email",
-			"action": [
-				"click"
-			],
-			"status": "completed",
-			"start_date": "2023-05-17T11:16:17.658Z",
-			"updated": {
-				"at": "2023-05-17T13:41:17.658Z",
-				"by": "Ferdhika"
-			},
-			"end_date": "2023-05-19T11:16:17.658Z",
-			"duration": {
-				"text": "1 Day(s)",
-				"value": 1,
-				"metric": {
-					"label": "Day(s)",
-					"value": "days"
-				},
-				"sla": 2,
-				"status": "success"
-			}
-		},
-		{
-			"name": "BAST",
-			"key": "upload_berita_acara_bast",
-			"action": [
-				"click",
-				"upload"
-			],
-			"status": "waiting",
-			"start_date": null,
-			"end_date": null,
-			"duration": {
-				"metric": {
-					"label": "Day(s)",
-					"value": "days"
-				},
-				"sla": 3
-			}
-		},
-		{
-			"name": "Product Activated",
-			"key": "approval_project_management_product_activated",
-			"action": [
-				"click"
-			],
-			"status": "waiting",
-			"start_date": null,
-			"end_date": null,
-			"duration": {
-				"metric": {
-					"label": "Day(s)",
-					"value": "days"
-				},
-				"sla": 1
-			}
-		}
-	],
-	"status": "waiting",
-	"created": {
-		"at": "2023-05-09T18:11:17.658Z",
-		"by": "Dadang Corneto"
-	}
+  "type": "fab",
+  "current_activation_tracking": {
+    "type": "task",
+    "key": "shipment_and_delivery_shipment_and_delivery",
+    "name": "Shipment and Delivery"
+  },
+  "activation_trackings": [
+    {
+      "name": "Order Created",
+      "key": "order_created",
+      "action": ["click"],
+      "status": "completed",
+      "start_date": "2023-05-09T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-09T20:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-09T22:11:17.658Z",
+      "duration": {
+        "text": "1 Hour(s)",
+        "value": 1,
+        "metric": {
+          "label": "Hour(s)",
+          "value": "hours"
+        },
+        "sla": 3,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Review Order",
+      "key": "review_order_review_order",
+      "action": ["click"],
+      "status": "completed",
+      "start_date": "2023-05-09T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-09T20:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-09T22:11:17.658Z",
+      "duration": {
+        "text": "1 Hour(s)",
+        "value": 1,
+        "metric": {
+          "label": "Hour(s)",
+          "value": "hours"
+        },
+        "sla": 3,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Shipment and Delivery",
+      "key": "shipment_and_delivery_shipment_and_delivery",
+      "action": ["click", "input"],
+      "action_detail": {
+        "input": "Sudah di deliver dengan alamat IP: XXX.XXX.XXX.XXX"
+      },
+      "status": "in_progress",
+      "start_date": "2023-05-11T19:11:17.658Z",
+      "updated": {
+        "at": "2023-05-13T19:11:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-12T19:11:17.658Z",
+      "duration": {
+        "text": "2 Day(s)",
+        "value": 2,
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 1,
+        "status": "danger",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Inform to Customer via Email",
+      "key": "inform_to_customer_via_email",
+      "action": ["click"],
+      "status": "waiting",
+      "start_date": "2023-05-17T11:16:17.658Z",
+      "updated": {
+        "at": "2023-05-17T13:41:17.658Z",
+        "by": "Ferdhika"
+      },
+      "end_date": "2023-05-19T11:16:17.658Z",
+      "duration": {
+        "text": "1 Day(s)",
+        "value": 1,
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 2,
+        "status": "success",
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "BAST",
+      "key": "upload_berita_acara_bast",
+      "action": ["click", "upload"],
+      "status": "waiting",
+      "start_date": null,
+      "end_date": null,
+      "duration": {
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 3,
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    },
+    {
+      "name": "Product Activated",
+      "key": "approval_project_management_product_activated",
+      "action": ["click"],
+      "status": "waiting",
+      "start_date": null,
+      "end_date": null,
+      "duration": {
+        "metric": {
+          "label": "Day(s)",
+          "value": "days"
+        },
+        "sla": 1,
+        "due_date": "2023-05-19T11:16:17.658Z"
+      }
+    }
+  ],
+  "status": "waiting",
+  "created": {
+    "at": "2023-05-09T18:11:17.658Z",
+    "by": "Dadang Corneto"
+  }
 }
